@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-argocd-1
+spec:
+  destination:
+    namespace: app-argocd-1
+    server: https://kubernetes.default.svc
+  source:
+    path: helm-guestbook
+    repoURL: https://github.com/venkatkarri/argocd-test.git
+    targetRevision: HEAD
+  sources: []
+  project: default
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+
+      
