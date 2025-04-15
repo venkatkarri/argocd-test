@@ -10,6 +10,9 @@ spec:
     path: helm-guestbook
     repoURL: https://github.com/venkatkarri/argocd-test.git
     targetRevision: HEAD
+    helm: 
+      valueFiles: 
+        - ../values/values.yaml
   sources: []
   project: default
   syncPolicy:
